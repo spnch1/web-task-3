@@ -1,3 +1,4 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,25 +11,16 @@ body {
     line-height: 1.5;
     color: #333;
     background-color: #f5f5f5;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.number {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* ===== LAYOUT ===== */
 .container {
     max-width: 1200px;
-    margin: auto;
-    justify-self: center;
-    word-break: break-word;
-
+    margin: 0 auto;
+    flex-grow: 1;
     display: grid;
     grid-template-areas:
         'header header sidebar'
@@ -37,62 +29,54 @@ body {
         'footer footer footer';
     grid-template-columns: 200px minmax(700px, 1fr) 300px;
     grid-template-rows: minmax(150px, auto) auto 1fr minmax(150px, auto);
-
-    flex-grow: 1;
+    word-break: break-word;
+    justify-self: center;
 }
 
-.block {
-    border: 1px solid black;
-}
-
-header,
-footer {
+/* ===== HEADER & FOOTER ===== */
+header, footer {
     background-color: lightsteelblue;
     padding: 30px;
-    
     display: flex;
     align-items: center;
 }
 
 header {
     grid-area: header;
-
-    justify-content: left;
+    justify-content: flex-start;
 }
 
+footer {
+    grid-area: footer;
+    justify-content: flex-end;
+}
+
+/* ===== SIDEBAR ===== */
 aside {
     grid-area: sidebar;
     background-color: lightgreen;
-}
-
-nav,
-section {
-    background-color: peachpuff;
-}
-
-section,
-article,
-aside {
     padding: 10px;
-    text-align: justify;
 }
 
+/* ===== NAVIGATION ===== */
 nav {
     grid-area: nav;
+    background-color: peachpuff;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: left;
-    justify-content: left;
+    padding: 10px;
 }
 
 nav ul li {
-    padding: 5px 0;
+    padding: 5px 10px;
     cursor: pointer;
+    margin: 5px 0;
+    position: relative;
+    width: auto;
 }
 
 nav ul li.item {
@@ -101,64 +85,67 @@ nav ul li.item {
   margin: 0 10px;
 }
 
+/* ===== CONTENT AREAS ===== */
+section, article {
+    padding: 10px;
+}
+
 section {
+    background-color: peachpuff;
     grid-area: section;
 }
 
 article {
+    background-color: #f9f9f9;
     grid-area: content;
 }
 
-footer {
-    grid-area: footer;
-
-    justify-content: right;
-}
-
+/* ===== TYPOGRAPHY ===== */
 p {
-    padding: .4em 0;
+    padding: 0.4em 0;
 }
 
-ol,
-ul {
+ol, ul:not(nav ul) {
     padding-left: 20px;
     margin: 10px 0;
 }
 
+/* ===== COMPONENTS ===== */
 .img-container {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    size: 100%;
+    width: 100%;
+    height: auto;
 }
 
-div.xy {
+.xy {
     display: flex;
     align-items: center;
-
     text-align: right;
-
     width: 30%;
-    height: auto;
     padding: 10px;
     background: #f5f5f5;
 }
 
-@media (max-width: 1200px) {
-    aside {
-        display: none;
-    }
+.block {
+    border: 1px solid black;
+}
 
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
     .container {
         grid-template-areas:
             'header header'
             'nav section'
             'nav content'
             'footer footer';
-        grid-template-columns: 200px auto;
-
+        grid-template-columns: 200px 1fr;
         max-width: 100%;
         margin: 0;
-  }
+    }
+
+    aside {
+        display: none;
+    }
 }

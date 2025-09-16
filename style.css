@@ -81,7 +81,6 @@ nav {
 
 nav ul {
     list-style: none;
-    display: flexbox;
     flex-wrap: wrap;
     align-items: center;
     justify-content: left;

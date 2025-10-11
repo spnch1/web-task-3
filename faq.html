@@ -2,37 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-table.css">
     <link rel="icon" type="image/x-icon" href="src/favicon.ico">
     <title>Task 1</title>
 </head>
 <body>
-    <main class="container">
-        <header class="block">
-            <div class="xy block">
-                <h1>The Quick Brown Fox</h1>
-            </div>
-        </header>
-        <aside class="block">
-            <h3>Trending!!!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-            <p class="img-container">
-                <img src="src/aside/white_cat.jpg" alt="A distinguished gentleman having his hair brushed">
-            </p>
-        </aside>
-        <nav class="block">
-            <ul>
-                <li class="item"><a href="index.html">Home</a></li>
-                <li class="item"><a href="about.html">About</a></li>
-                <li class="item"><a href="faq.html">FAQ</a></li>
-                <li class="item"><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <section class="block">
-            <h2>Frequently Asked Questions</h2>
-        </section>
-        <article class="block">
-            <div>
+    <table class="container">
+        <tr>
+            <td colspan="2" class="block header-cell">
+                <div class="xy block">
+                    <h1>The Quick Brown Fox</h1>
+                </div>
+            </td>
+            <td rowspan="3" class="block sidebar-cell">
+                <h3>Trending!!!</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+                <p class="img-container">
+                    <img src="src/aside/white_cat.jpg" alt="A distinguished gentleman having his hair brushed">
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="block nav-cell">
+                <div class="nav-content">
+                    <ul>
+                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="item"><a href="about.html">About</a></li>
+                        <li class="item"><a href="faq.html">FAQ</a></li>
+                        <li class="item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td class="block section-cell">
+                <h2>Frequently Asked Questions</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="block article-cell">
                 <div>
                     <h3>What is this?</h3>
                     <p>This is a demo web app for a web development assignment.</p>
@@ -41,13 +47,15 @@
                     <h3>Why?</h3>
                     <p>Because I can.</p>
                 </div>
-            </div>
-        </article>
-        <footer class="block">
-            <div class="xy block">
-                <h1>Jumps Over The Lazy Dog</h1>
-            </div>
-        </footer>
-    </main>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="block footer-cell">
+                <div class="xy block">
+                    <h1>Jumps Over The Lazy Dog</h1>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

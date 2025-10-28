@@ -6,7 +6,7 @@
 
 ``about.html`` uses flexbox
 
-``faq.html uses`` tables entirely
+``faq.html`` uses tables entirely
 
 ``contact.html`` is built for email
 
